@@ -1,0 +1,34 @@
+{
+    "label": "ACS Demographic Data",
+    "category_label": "Models",
+    "branding": {
+        "image_uri": "https://marketplace-api.looker.com/block-icons/acs_demographic_icon.png",
+        "tagline": "Get to know your audience with the ACS Demographic Data Block."
+    },
+    "constants": {
+        "CONNECTION_NAME": {
+          "label": "Connection Name",
+          "value_constraint": "connection"
+        },
+        "DIALECT" : {
+          "label" : "Dialect (Please enter either: bigquery, redshift, or snowflake)"
+        },
+        "CONFIG_PROJECT_NAME": {
+            "label": "Config Project Name"
+        }
+    },
+    "models": [
+    {
+      "name": "acs_demographic",
+      "connection_constant": "CONNECTION_NAME"
+    }
+  ],
+    "auxiliary_projects": [
+    {
+      "git_uri": "git://github.com/llooker/data-blocks-acs-census-config.git",
+      "git_ref": "77aa72e42320860bbc63613f8c613c94a10acc63",
+      "label": "ACS Demographic Data Config",
+      "constant_name": "CONFIG_PROJECT_NAME"
+    }
+  ]
+}
